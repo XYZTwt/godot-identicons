@@ -1,0 +1,20 @@
+<svg viewbox="0 0 129 129" xmlns="http://www.w3.org/2000/svg">
+	<defs>
+		<g id="!9">
+			<path d="M 0,0 0,1 1,1 1,0 z M 0.25,0.25 0.75,0.25 0.75,0.75 0.25,0.75 z" />
+		</g>
+		<g id="7">
+			<path d="M 0.5,0 1,1 0.5,1 0.75,0.5 0.25,0.5 0.5,1 0,1 z" />
+		</g>
+	</defs>
+	<g transform="scale(43)" fill="#90a8f0">
+		<use href="#!9" />
+		<use href="#7" x="1" />
+		<use href="#!9" x="2" />
+		<use href="#7" x="1" y="-3" transform="rotate(90)" />
+		<use href="#!9" x="2" y="2" />
+		<use href="#7" x="-2" y="-3" transform="rotate(180)" />
+		<use href="#!9" y="2" />
+		<use href="#7" x="-2" y="0" transform="rotate(-90)" />
+	</g>
+</svg>
