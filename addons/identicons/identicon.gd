@@ -7,7 +7,6 @@ extends Node2D
 			return
 		code=posmod(value,4294967296)
 		queue_redraw()
-@export_color_no_alpha var eee: Color
 
 const patch0=[Vector2(0,0),Vector2(1,0),Vector2(1,1),Vector2(0,1)]
 const patches=[patch0,[Vector2(0,0),Vector2(1,0),Vector2(0,1)],[Vector2(0.5,0),Vector2(1,1),Vector2(0,1)],[Vector2(0,0),Vector2(0.5,0),Vector2(0.5,1),Vector2(0,1)],[Vector2(0.5,0),Vector2(0,0.5),Vector2(0.5,1),Vector2(1,0.5)],[Vector2(0,0),Vector2(1,0.5),Vector2(1,1),Vector2(0.5,1)],[Vector2(0.5,0),Vector2(1,1),Vector2(0.5,1),Vector2(0.75,0.5),Vector2(0.25001,0.5),Vector2(0.49999,1),Vector2(0,1)],[Vector2(0,0),Vector2(1,0.5),Vector2(0.5,1)],[Vector2(0.25,0.25),Vector2(0.75,0.25),Vector2(0.75,0.75),Vector2(0.25,0.75)],[Vector2(1,0),Vector2(0,1),Vector2(0,0.5),Vector2(0.5,0.5),Vector2(0.5,0)],[Vector2(0,0),Vector2(0.5,0),Vector2(0.5,0.5),Vector2(0,0.5)],[Vector2(0,0.5),Vector2(1,0.5),Vector2(0.5,1)],[Vector2(0,1),Vector2(0.5,0.5),Vector2(1,1)],[Vector2(0,0.5),Vector2(0.5,0),Vector2(0.5,0.5)],[Vector2(0,0),Vector2(0.5,0),Vector2(0,0.5)],patch0]
