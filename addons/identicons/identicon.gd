@@ -1,4 +1,6 @@
 @tool
+
+class_name Identicon
 extends Node2D
 
 @export var code: int:
