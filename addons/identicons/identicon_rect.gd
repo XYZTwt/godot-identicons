@@ -18,7 +18,14 @@ func draw_patch(xform,type,inv,turn,fore,back):
 	if type==15:
 		inv=not inv	
 
-	draw_set_transform_matrix(xform.rotated_local(turn * PI/2))
+	var xform := Transform2D.IDENTITY\
+	.translated_local(pos * size / 3)\
+	.translated_local(-(size / 6).rotated(turn * PI / 2))\
+	.translated_local(size / 6)\
+	.rotated_local(turn*PI/2)\
+	.scaled_local(size/3)
+	
+	draw_set_transform_matrix(xform)
 	if inv:
 		draw_rect(Rect2(Vector2.ZERO,Vector2.ONE),fore)
 		draw_colored_polygon(patches[type],back)
@@ -38,16 +45,14 @@ func _draw():
 	var foreColor=Color8(code>>24&248,code>>18&248,code>>13&248)
 	var backColor=Color(1,1,1)
 
-	var xform := Transform2D.IDENTITY.translated_local(size / 2).scaled_local(size / 2)
+	draw_patch(Vector2(1,1),centralType,centralInvert,0,foreColor,backColor)
 	
-	draw_patch(xform,centralType,centralInvert,0,foreColor,backColor)
+	draw_patch(Vector2(0,0),cornerType,cornerInvert,cornerTurn,foreColor,backColor)
+	draw_patch(Vector2(2,0),cornerType,cornerInvert,cornerTurn+1,foreColor,backColor)
+	draw_patch(Vector2(2,2),cornerType,cornerInvert,cornerTurn+2,foreColor,backColor)
+	draw_patch(Vector2(0,2),cornerType,cornerInvert,cornerTurn+3,foreColor,backColor)
 	
-	draw_patch(xform,cornerType,cornerInvert,cornerTurn,foreColor,backColor)
-	draw_patch(xform,cornerType,cornerInvert,cornerTurn+1,foreColor,backColor)
-	draw_patch(xform,cornerType,cornerInvert,cornerTurn+2,foreColor,backColor)
-	draw_patch(xform,cornerType,cornerInvert,cornerTurn+3,foreColor,backColor)
-	
-	draw_patch(xform,edgeType,edgeInvert,edgeTurn,foreColor,backColor)
-	draw_patch(xform,edgeType,edgeInvert,edgeTurn+1,foreColor,backColor)
-	draw_patch(xform,edgeType,edgeInvert,edgeTurn+2,foreColor,backColor)
-	draw_patch(xform,edgeType,edgeInvert,edgeTurn+3,foreColor,backColor)
+	draw_patch(Vector2(1,0),edgeType,edgeInvert,edgeTurn,foreColor,backColor)
+	draw_patch(Vector2(2,1),edgeType,edgeInvert,edgeTurn+1,foreColor,backColor)
+	draw_patch(Vector2(1,2),edgeType,edgeInvert,edgeTurn+2,foreColor,backColor)
+	draw_patch(Vector2(0,1),edgeType,edgeInvert,edgeTurn+3,foreColor,backColor)
